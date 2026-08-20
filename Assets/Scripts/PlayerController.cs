@@ -3,7 +3,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private InputSystem_Actions controls;
-    public int speed = 10;
+
+    [SerializeField]
+    private int speed = 10;
 
     void Awake()
     {
@@ -46,5 +48,10 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(-15.95f, transform.position.y, transform.position.z);
         }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject);
     }
 }

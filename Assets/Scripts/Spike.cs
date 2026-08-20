@@ -1,8 +1,11 @@
+using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Spike : MonoBehaviour
 {
-    public int spikeSpeed;
+    [SerializeField]
+    private int spikeSpeed;
 
     void Start() { }
 
@@ -25,4 +28,5 @@ public class Spike : MonoBehaviour
             spikeSpeed * Time.deltaTime
         );
     }
+
 }
