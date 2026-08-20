@@ -8,14 +8,16 @@ public class Spike : MonoBehaviour
     [SerializeField]
     private int spikeSpeed;
 
+    [SerializeField]
+    private int spikeID;
+
     void Start()
     {
+        Unfold();
+        Invoke("Fold", 5f);
     }
 
-    void Update()
-    {
-
-    }
+    void Update() { }
 
     void Unfold()
     {
@@ -44,7 +46,6 @@ public class Spike : MonoBehaviour
 
         transform.position = new Vector3(transform.position.x, transform.position.y, -1);
     }
-
 
     private IEnumerator FoldCoroutine()
     {
